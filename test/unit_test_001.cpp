@@ -97,7 +97,7 @@ unittest(test_reset)
 
 unittest(test_write_read)
 {
-  AD5263 AD(0x2C);  //  AD0 & AD1 == GND
+  AD5263 ADx(0x2C);  //  AD0 & AD1 == GND
   Wire.begin();
 
   assertEqual(128, ADx.read(0));
@@ -121,7 +121,7 @@ unittest(test_write_read)
 
 unittest(test_O1_O2)
 {
-  AD5263 AD(0x2C);  //  AD0 & AD1 == GND
+  AD5263 ADx(0x2C);  //  AD0 & AD1 == GND
   Wire.begin();
 
   assertEqual(0, ADx.getO1());
