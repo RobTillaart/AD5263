@@ -58,40 +58,40 @@ unittest(test_constructors)
 
 unittest(test_reset)
 {
-  AD524X AD(0x2C);  //  AD0 & AD1 == GND
+  AD524X ADx(0x2C);  //  AD0 & AD1 == GND
   Wire.begin();
 
-  assertEqual(128, AD.read(0));
-  assertEqual(128, AD.read(1));
-  assertEqual(128, AD.read(2));
-  assertEqual(128, AD.read(3));
+  assertEqual(128, ADx.read(0));
+  assertEqual(128, ADx.read(1));
+  assertEqual(128, ADx.read(2));
+  assertEqual(128, ADx.read(3));
 
-  AD.zeroAll();
-  assertEqual(0, AD.read(0));
-  assertEqual(0, AD.read(1));
-  assertEqual(0, AD.read(2));
-  assertEqual(0, AD.read(3));
+  ADx.zeroAll();
+  assertEqual(0, ADx.read(0));
+  assertEqual(0, ADx.read(1));
+  assertEqual(0, ADx.read(2));
+  assertEqual(0, ADx.read(3));
   
-  AD.reset();
-  assertEqual(128, AD.read(0));
-  assertEqual(128, AD.read(1));
-  assertEqual(128, AD.read(2));
-  assertEqual(128, AD.read(3));
+  ADx.reset();
+  assertEqual(128, ADx.read(0));
+  assertEqual(128, ADx.read(1));
+  assertEqual(128, ADx.read(2));
+  assertEqual(128, ADx.read(3));
 
-  AD.zeroAll();
-  assertEqual(0, AD.read(0));
-  assertEqual(0, AD.read(1));
-  assertEqual(0, AD.read(2));
-  assertEqual(0, AD.read(3));
+  ADx.zeroAll();
+  assertEqual(0, ADx.read(0));
+  assertEqual(0, ADx.read(1));
+  assertEqual(0, ADx.read(2));
+  assertEqual(0, ADx.read(3));
 
-  AD.midScaleReset(0);
-  assertEqual(128, AD.read(0));
-  AD.midScaleReset(1);
-  assertEqual(128, AD.read(1));
-  AD.midScaleReset(0);
-  assertEqual(128, AD.read(0));
-  AD.midScaleReset(1);
-  assertEqual(128, AD.read(1));
+  ADx.midScaleReset(0);
+  assertEqual(128, ADx.read(0));
+  ADx.midScaleReset(1);
+  assertEqual(128, ADx.read(1));
+  ADx.midScaleReset(0);
+  assertEqual(128, ADx.read(0));
+  ADx.midScaleReset(1);
+  assertEqual(128, ADx.read(1));
 }
 
 
@@ -100,22 +100,22 @@ unittest(test_write_read)
   AD524X AD(0x2C);  //  AD0 & AD1 == GND
   Wire.begin();
 
-  assertEqual(128, AD.read(0));
-  assertEqual(128, AD.read(1));
-  assertEqual(128, AD.read(2));
-  assertEqual(128, AD.read(3));
+  assertEqual(128, ADx.read(0));
+  assertEqual(128, ADx.read(1));
+  assertEqual(128, ADx.read(2));
+  assertEqual(128, ADx.read(3));
 
-  AD.write(0, 42);
-  assertEqual(42, AD.read(0));
-  assertEqual(128, AD.read(1));
-  assertEqual(128, AD.read(2));
-  assertEqual(128, AD.read(3));
+  ADx.write(0, 42);
+  assertEqual(42, ADx.read(0));
+  assertEqual(128, ADx.read(1));
+  assertEqual(128, ADx.read(2));
+  assertEqual(128, ADx.read(3));
 
-  AD.write(1, 42);
-  assertEqual(42, AD.read(0));
-  assertEqual(42, AD.read(1));
-  assertEqual(128, AD.read(2));
-  assertEqual(128, AD.read(3));
+  ADx.write(1, 42);
+  assertEqual(42, ADx.read(0));
+  assertEqual(42, ADx.read(1));
+  assertEqual(128, ADx.read(2));
+  assertEqual(128, ADx.read(3));
 }
 
 
@@ -124,28 +124,28 @@ unittest(test_O1_O2)
   AD524X AD(0x2C);  //  AD0 & AD1 == GND
   Wire.begin();
 
-  assertEqual(0, AD.getO1());
-  assertEqual(0, AD.getO2());
+  assertEqual(0, ADx.getO1());
+  assertEqual(0, ADx.getO2());
   
-  AD.setO1();
-  assertEqual(1, AD.getO1());
-  assertEqual(0, AD.getO2());
+  ADx.setO1();
+  assertEqual(1, ADx.getO1());
+  assertEqual(0, ADx.getO2());
 
-  AD.setO2();
-  assertEqual(1, AD.getO1());
-  assertEqual(1, AD.getO2());
+  ADx.setO2();
+  assertEqual(1, ADx.getO1());
+  assertEqual(1, ADx.getO2());
   
-  AD.setO1(0);
-  assertEqual(0, AD.getO1());
-  assertEqual(1, AD.getO2());
+  ADx.setO1(0);
+  assertEqual(0, ADx.getO1());
+  assertEqual(1, ADx.getO2());
 
-  AD.setO2(0);
-  assertEqual(0, AD.getO1());
-  assertEqual(0, AD.getO2());
+  ADx.setO2(0);
+  assertEqual(0, ADx.getO1());
+  assertEqual(0, ADx.getO2());
   
-  AD.write(0, 0, 1, 1);
-  assertEqual(1, AD.getO1());
-  assertEqual(1, AD.getO2());
+  ADx.write(0, 0, 1, 1);
+  assertEqual(1, ADx.getO1());
+  assertEqual(1, ADx.getO2());
 }
 
 
