@@ -16,11 +16,15 @@ Arduino library for I2C digital potentiometer AD5263 and compatibles.
 
 ## Description
 
+**Experimental** needs testing with hardware.
+
 The AD5263 is a digital potentiometer with 4 channels.
 This digital potentiometers come in 20, 50 and 200 kΩ
 and can be set in 256 steps.
 
-An important property of the devices is that they defaults
+This library only implements the I2C interface.
+
+An important property of the device is that it defaults
 to their mid position at startup.
 
 The library also defines **AD5263_MIDPOINT** == 128.
@@ -45,7 +49,9 @@ The AD5280 and AD5282 are one and two channel devices that might be compatible.
 Not tested yet. See future.
 
 
-## I2C address
+## I2C
+
+#### Address
 
 The AD5263 has two address lines to configure the I2C address. 0x2C - 0x2F
 
@@ -57,6 +63,13 @@ The AD5263 has two address lines to configure the I2C address. 0x2C - 0x2F
 |    47      |    0x2F     |  +5V  |  +5V  |
 
 Note the AD5263 uses the same range as the AD524X devices.
+
+
+#### Performance
+
+- TODO
+- table
+- test sketch
 
 
 ## Interface
@@ -116,7 +129,8 @@ rdac should be 0..3.
 #### Must
 
 - update documentation.
-- test with hardware
+- get hardware (breakout or so).
+- test with hardware.
 
 
 #### Should
