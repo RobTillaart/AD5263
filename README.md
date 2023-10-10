@@ -49,6 +49,43 @@ The AD5280 and AD5282 are one and two channel devices that might be compatible.
 Not tested yet. See future.
 
 
+#### Hardware connection AD5263
+
+Please read datasheet for all details!
+
+|  Pin  |   Name   |  Description (short)                   |
+|:-----:|:---------|:---------------------------------------|
+|   1  |       B1  |  Resistor Terminal B1.                 |
+|   2  |       A1  |  Resistor Terminal A1 (ADDR = 00).     |
+|   3  |       W1  |  Wiper Terminal W1.                    |
+|   4  |       B3  |  Resistor Terminal B3.                 |
+|   5  |       A3  |  Resistor Terminal A3.                 |
+|   6  |       W3  |  Wiper Terminal W3 (ADDR = 10).        |
+|   7  |      VDD  |  Positive Power Supply                 |
+|   8  |      GND  |  Ground.                               |
+|   9  |      DIS  |  SPI/I2C Select.  SPI = 0, I2C = 1     |
+|  10  |   VLOGIC  |  2.7 - 5.5V Logic Supply Voltage.      |  
+|  11  |  SDI/SDA  |  (SPI data in)    I2C SDA              |
+|  12  |  CLK/SCL  |  Serial Clock     I2C SCL              |
+|  13  |   CS/AD0  |  (SPI Chip Select). I2C address bit 0  |
+|  14  |  RES/AD1  |  (SPI RESET) I2C Address bit 1         |
+|  15  |     SHDN  |  Shutdown. Tie to +5 V if not used.    |
+|  16  |   SDO/O1  |  (SPI data out)   I2C  Output O1       |
+|  17  |    NC/O2  |  (SPI No Connect) I2C Output O2        |
+|  18  |      VSS  |  Negative Power Supply.                |
+|  19  |       W4  |  Wiper Terminal W4 (ADDR = 11).        |
+|  20  |       A4  |  Resistor Terminal A4.                 |
+|  21  |       B4  |  Resistor Terminal B4.                 |
+|  22  |       W2  |  Wiper Terminal W2 (ADDR = 01).        |
+|  23  |       A2  |  Resistor Terminal A2.                 |
+|  24  |       B2  |  Resistor Terminal B2.                 |
+
+
+VLOGIC: 
+The logic supply voltage should always be less than or equal to VDD. 
+In addition, logic levels must be limited to the logic supply voltage regardless of VDD.
+
+
 ## I2C
 
 #### Address
@@ -68,8 +105,18 @@ Note the AD5263 uses the same range as the AD524X devices.
 #### Performance
 
 - TODO
-- table
 - test sketch
+
+Tested with UNO (not yet)
+
+|  Speed  |  Time (us)  |
+|:-------:|:-----------:|
+|  100K   |             |
+|  200K   |             |
+|  400K   |             |
+|  600K   |             |
+|  800K   |             |
+
 
 
 ## Interface
