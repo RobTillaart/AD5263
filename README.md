@@ -45,8 +45,7 @@ This library is related to
 
 #### Compatibles
 
-The AD5280 and AD5282 are one and two channel devices that might be compatible.
-Not tested yet. See future.
+None known so far. 
 
 
 #### Hardware connection AD5263
@@ -104,18 +103,15 @@ Note the AD5263 uses the same range as the AD524X devices.
 
 #### Performance
 
-- TODO
-- test sketch
+- TODO: Test with UNO / ESP32
 
-Tested with UNO (not yet)
-
-|  Speed  |  Time (us)  |
-|:-------:|:-----------:|
-|  100K   |             |
-|  200K   |             |
-|  400K   |             |
-|  600K   |             |
-|  800K   |             |
+|  Speed   |  Time (us)  |
+|:--------:|:-----------:|
+|  100000  |             |
+|  200000  |             |
+|  400000  |             |
+|  600000  |             |
+|  800000  |             |
 
 
 
@@ -185,7 +181,6 @@ rdac should be 0..3.
 
 #### Could
 
-- investigate AD5280/82 compatibility.
 - improve error handling.
 - sync with AD520X / AD524X library
 - optimize footprint **write()** and **midScaleReset()**
