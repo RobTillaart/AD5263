@@ -21,13 +21,11 @@ Arduino library for I2C digital potentiometer AD5263 and compatibles.
 The AD5263 is a digital potentiometer with 4 channels.
 This digital potentiometers come in 20, 50 and 200 kΩ
 and can be set in 256 steps.
+This library only implements the I2C interface (See future for SPI).
 
-This library only implements the I2C interface.
-
-An important property of the device is that it defaults
+An important property of the AD5263 device is that it defaults
 to their mid position at startup.
-
-The library also defines **AD5263_MIDPOINT** == 128.
+The library defines **AD5263_MIDPOINT** == 128 (as per datasheet).
 To be used to set to defined mid-point.
 
 (Library is based on datasheet Rev.F )
@@ -48,12 +46,12 @@ This library is related to
 None known so far. 
 
 
-#### Hardware connection AD5263
+## Hardware connection AD5263
 
 Please read datasheet for all details!
 
-|  Pin  |   Name   |  Description (short)                   |
-|:-----:|:---------|:---------------------------------------|
+|  Pin |   Name    |  Description (short)                   |
+|:----:|:----------|:---------------------------------------|
 |   1  |       B1  |  Resistor Terminal B1.                 |
 |   2  |       A1  |  Resistor Terminal A1 (ADDR = 00).     |
 |   3  |       W1  |  Wiper Terminal W1.                    |
@@ -103,16 +101,16 @@ Note the AD5263 uses the same range as the AD524X devices.
 
 #### Performance
 
-- TODO: Test with UNO / ESP32
+- TODO: Test with UNO / ESP32 / RP2040 / ...
 
-|  Speed   |  Time (us)  |
-|:--------:|:-----------:|
-|  100000  |             |
-|  200000  |             |
-|  400000  |             |
-|  600000  |             |
-|  800000  |             |
-
+|  Speed   |  UNO (us)  |  ESP32 (us)  |
+|:--------:|:----------:|:------------:|
+|  100000  |            |              |
+|  200000  |            |              |
+|  400000  |            |              |
+|  600000  |            |              |
+|  800000  |            |              |
+| 1000000  |            |              |
 
 
 ## Interface
@@ -172,7 +170,7 @@ rdac should be 0..3.
 #### Must
 
 - update documentation.
-- get hardware (breakout or so).
+- get hardware (breakout).
 - test with hardware.
 
 
@@ -184,6 +182,7 @@ rdac should be 0..3.
 - improve error handling.
 - sync with AD520X / AD524X library
 - optimize footprint **write()** and **midScaleReset()**
+- investigate SPI interface (performance better)
 
 
 #### Wont
