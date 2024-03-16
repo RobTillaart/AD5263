@@ -50,7 +50,7 @@ bool AD5263::isConnected()
 }
 
 
-uint8_t getAddress()
+uint8_t AD5263::getAddress()
 {
   return _address;
 }
