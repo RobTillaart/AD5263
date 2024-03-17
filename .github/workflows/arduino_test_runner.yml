@@ -5,7 +5,8 @@ on: [push, pull_request]
 
 jobs:
   runTest:
-    runs-on: ubuntu-22.03
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - uses: actions/checkout@v4
