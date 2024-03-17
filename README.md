@@ -197,9 +197,7 @@ rdac should be 0..3.
   - is this the same?
 - investigate SPI interface (performance better)
 
-
 #### Wont
-
 
 
 ## Support
